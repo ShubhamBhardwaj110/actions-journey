@@ -4,6 +4,8 @@ jobs:
   context:
     runs-on: ubuntu-latest
     steps:
+      - name: Select Repository
+        uses: actions/checkout@v4
       - name: Describe this run
         run: |
           echo "Repository: ${{ github.repository}}"
@@ -11,4 +13,4 @@ jobs:
           echo "Commit: ${{ github.sha }}"
           echo "Event: ${{ github.event_name }}"
           echo "Triggered by: ${{ github.actor }}"
-          echo "Runs on: ${{runner.os}}"
+          echo "Runs on: ${{ runner.os }}"
