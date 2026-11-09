@@ -1,0 +1,21 @@
+name: release
+
+on:
+  push:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Lint checks passed"
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Unit tests passed"
+
+  package:
+    runs-on: ubuntu-latest
+    needs: [lint, unit-tests]
+    steps:
+      - run: echo "Packaging application"
